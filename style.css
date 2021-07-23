@@ -1,0 +1,245 @@
+@font-face {
+        font-family: 'Tourney', cursive;
+        src: url("assets/font/Tourney-Italic-VariableFont_wdth,wght.ttf") format("ttf");
+    }
+    /* Color Theme Swatches in Hex */
+.My-Color-Theme-1-hex { color: #8C6565; } /*background  */
+.My-Color-Theme-2-hex { color: #4D3737; } /* burger  */
+.My-Color-Theme-3-hex { color: #D99C9C; } /* text -h */
+.My-Color-Theme-4-hex { color: #CC9393; } /* text -p */
+.My-Color-Theme-5-hex { color: #B38181; } /* text -footer */
+
+/* Color Theme Swatches in RGBA */
+.My-Color-Theme-1-rgba { color: rgba(140, 101, 101, 1); }
+.My-Color-Theme-2-rgba { color: rgba(77, 55, 55, 1); }
+.My-Color-Theme-3-rgba { color: rgba(217, 156, 156, 1); }
+.My-Color-Theme-4-rgba { color: rgba(204, 147, 147, 1); }
+.My-Color-Theme-5-rgba { color: rgba(179, 129, 129, 1); }
+
+/*Variables CSS (Define colors)s - variable css définit pour utilisation des couleurs  */
+:root {
+    --main-bg-color: #8C6565; 
+    --text-h-color: #D99C9C;
+    --text-p-color: #CC9393;
+    --span-bg-color: #4D3737;
+    --text-footer-color: #B38181;
+    --text-a-color: #525252; 
+}
+
+body{   
+    background-color: var(--main-bg-color);
+    font-family: 'Tourney', cursive;
+    padding: 0;
+    margin: 0;    
+}
+
+/** Top **/
+header{
+    text-align: center;
+    border: 2px solid transparent;
+}
+    /* link - lien */
+    .site::after {
+        content: "Visitez mon site";
+        text-align: center;
+        font-size: 2rem;
+        color: var(--text-a-color);
+        position: fixed;
+        transform: rotate(-90deg);
+        left: -59px;
+        top: 270px;
+    }
+
+    .site:hover::after{
+        color: white;
+    }
+
+/** Main **/
+/* Container  */
+
+div{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    z-index: 1;
+    padding: 45px;
+}
+
+
+/* Burger elements - élèments du burger */
+span {
+    width: 88px;
+    background: white;
+    height: 15px;
+    margin-top: 10px;
+    border-radius: 10px;
+    transition: all cubic-bezier(0.65, 0.05, 0.09, 1.09) 0.1s;
+    -webkit-transition: all ease-in-out 0.1s;
+    -moz-transition: all ease-in-out 0.1s;
+    -ms-transition: all ease-in-out 0.1s;
+    -o-transition: all ease-in-out 0.1s;
+}
+
+span:hover{
+    width:12%;
+}
+
+/* text (title and content) / texte (titre et paragraphe) */
+h1{
+    color: var(--text-h-color);
+    font-family: 'Tourney', cursive;
+    letter-spacing: 2vw;
+    font-size: 5rem;
+}
+p {
+    color: var(--text-p-color);
+    font-family: 'Lexend Mega', sans-serif;
+    text-align: center;
+    padding: 0 86px;
+    line-height: 15px;
+    font-size: 1rem;
+}
+/** Bottom **/
+/* link / Liens */
+
+.contact {
+    color: var(--text-a-color);
+    background-color: var(--text-footer-color);
+    text-align: center;
+    text-decoration: none;
+    font-size: 1.25rem;
+    margin: 0% 7em;
+    padding: 2%;
+    display: flex;
+    justify-content: center;
+    border-radius: 3px;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    -ms-border-radius: 3px;
+    -o-border-radius: 3px;
+    align-content: center;
+    align-items: center;
+}
+
+.contact:hover {
+    box-shadow: -1px -1px 96px 0px #b38181;
+    color: white;
+    font-weight: bolder;
+}
+.contact:hover::after{
+    content: ' Je recherche une entreprise (Alternance à partir de Sept - 2021)';
+    color: var(--text-a-color);
+    text-align: left;
+    padding: 20px;
+}
+footer{
+    display: flex;
+    flex-direction: column;
+    padding: 50px;
+}
+footer>p{
+    color: var(--text-footer-color);
+    font-size: 0.75rem;
+}
+
+.none{
+    display: none;
+    padding: 45px;
+}
+
+.flex{
+    display: flex;
+    padding: 45px;
+    
+}
+
+/* span animation for burger (open and close) - Animation des span pour le burger (ouvert et fermé)  */
+#rotateTop{
+    position: relative;
+    top:25px;     
+}
+
+@keyframes translateTop{
+    from{
+        transform: translateY(0);
+    }
+
+    to{
+        transform: translateY(45px);
+    }
+}
+
+@keyframes translateBottom{
+    from{
+        transform: translateY(0);
+    }
+
+    to{
+        transform: translateY(-45px);
+    }
+}
+
+
+@keyframes translateTopclose{
+    from{
+        transform: translateY(45px);
+    }
+
+    to{
+        transform: translateY(0);
+    }
+}
+
+@keyframes translateBottomclose{
+    from{
+        transform: translateY(-45px);
+    }
+
+    to{
+        transform: translateY(0);
+    }
+}
+
+
+@keyframes rotateTop {
+    from{
+        transform: rotate(0);
+    }
+    
+    to{
+        transform: rotate(-135deg);
+    }
+}
+
+@keyframes rotateBottom {
+    from{
+        transform: rotate(0);
+    }
+
+    to{
+        transform: rotate(-45deg);
+    }
+}
+
+@keyframes rotateTopclose {
+    from{
+        
+        transform: rotate(45deg);
+    }
+
+    to{
+        transform: rotate(0);
+    }
+}
+
+@keyframes rotateBottomclose {
+    from{
+        transform: rotate(-45deg);
+    }
+
+    to{
+        
+        transform: rotate(0);
+    }
+}
